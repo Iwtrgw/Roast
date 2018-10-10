@@ -46,15 +46,15 @@ class CafesController extends Controller
      | Method:         POST
      | Description:    Adds a new cafe to the application
     */
-   public function postNewCafe()
+   public function postNewCafe(Request $request)
    {
    		$cafe = new Cafe();
 
-   		$cafe->name = Request::get('name');
-   		$cafe->address = Request::get('address');
-   		$cafe->city = Request::get('city');
-   		$cafe->state = Request::get('state');
-   		$cafe->zip = Request::get('zip');
+   		$cafe->name = $request->name;
+   		$cafe->address = $request->address;
+   		$cafe->city = $request->city;
+   		$cafe->state = $request->state;
+   		$cafe->zip = $request->zip;
 
    		$cafe->save();
 
